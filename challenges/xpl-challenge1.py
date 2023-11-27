@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#xpl-challenge1.py
 
 from pwn import *
 context.os = 'linux'
@@ -46,6 +47,7 @@ else:
 
 payload = b''
 if type(shellcode) == type(b''):
+    #no assembling needed, shellcode already in machine format
     payload += shellcode
 else:
     payload += asm(shellcode)
